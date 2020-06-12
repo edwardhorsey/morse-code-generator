@@ -56,12 +56,19 @@ const morseObj = {
 
 }
 
-let string = "'i\'m nervous this won\'t work', but hey i think it does"
+const toHyphens = (str) => {
+  return str.split('').map(e=>e.replace('_', '-')).join('');
+};
+
+const fromHyphens = (str) => {
+  return str.split('').map(e=>e.replace('-', '_')).join('');
+};
 
 const turnIntoMorse = (str) => {
-  return str.toUpperCase().split('').map(e=>{
+  let output = str.toUpperCase().split('').map(e=>{
     return e === ' ' ? ' | ' : morseObj[e];
   }).join(' ');
+  return toHyphens(output);
 };
 
 const turnIntoEnglish = (str) => {
@@ -71,7 +78,7 @@ const turnIntoEnglish = (str) => {
   return output.map(e=>e.replace('|', ' ')).join('');
 }
 
-const morseDetection = (string) => /^[\.\_\s\|]+$/.test(string);
+const morseDetection = (string) => /^[\.-\s\|]+$/.test(string);
 
 const userInput = document.getElementById('input-in');
 const langDetectOutput = document.getElementById('language-detect');
@@ -83,7 +90,7 @@ submitButton.addEventListener('click', ()=>{
   outputBox.innerHTML = '';
   if (morseDetection(input)) {
     langDetectOutput.innerHTML = 'You entered morse code. Here\'s your English translation:';
-    outputBox.innerHTML = turnIntoEnglish(input);
+    outputBox.innerHTML = turnIntoEnglish(fromHyphens(input));
   } else {
     langDetectOutput.innerHTML = 'You entered english. Here\'s your morse code:';
     outputBox.innerHTML = turnIntoMorse(input);

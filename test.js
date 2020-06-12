@@ -61,10 +61,16 @@ const morseObj = {
 let string = '. _..'
 
 
+const toHyphens = (str) => {
+  return str.split('').map(e=>e.replace('_', '-')).join('');
+};
+
+const fromHyphens = (str) => {
+  return str.split('').map(e=>e.replace('-', '_')).join('');
+};
 
 
-
-
+console.log(toHyphens(string))
 
 console.log(/^[\.\_\s\|]+$/.test(string));
 
