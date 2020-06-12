@@ -1,0 +1,89 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  background-color: #cccc92;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+body article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  height: 80%;
+  background-color: #c9c9c9;
+}
+
+body article h1, body article h4 {
+  padding: 10px;
+  margin: 0 auto;
+}
+
+body article div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  height: 80%;
+  white-space: normal;
+}
+
+body article div p {
+  padding: 10px 0px;
+}
+
+body article div input.btn {
+  width: 50%;
+  margin: 10px 0px;
+  height: 35px;
+}
+
+body article div textarea {
+  padding: 10px;
+}
+
+body article div.input-section {
+  text-align: left;
+}
+
+body article div.output-section {
+  text-align: right;
+}
+
+body article div a:visited {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */
