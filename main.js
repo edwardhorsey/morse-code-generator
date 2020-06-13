@@ -60,15 +60,17 @@ const toHyphens = (str) => str.split('').map(e=>e.replace('_', '-')).join('');
 
 const fromHyphens = (str) => str.split('').map(e=>e.replace('-', '_')).join('');
 
+const trimWhiteSpace = (str) => str.replace(/\s+/g, ' ').trim();
+
 const turnIntoMorse = (str) => {
-  let output = str.toUpperCase().split('').map(e=>{
+  let output = trimWhiteSpace(str).toUpperCase().split('').map(e=>{
     return e === ' ' ? ' | ' : morseObj[e];
   }).join(' ');
   return toHyphens(output);
 };
 
 const turnIntoEnglish = (str) => {
-  let output = str.toUpperCase().split(' ').map(e=>{
+  let output = trimWhiteSpace(str).toUpperCase().split(' ').map(e=>{
     return e === '|' ? e : Object.keys(morseObj).find(k=>{return morseObj[k] === e});
   })
   return output.map(e=>e.replace('|', ' ')).join('');

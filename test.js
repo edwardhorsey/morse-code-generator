@@ -112,3 +112,12 @@ console.log(turnIntoEnglish(string));
 //   console.log(string, output);
 //   return output;
 // }
+
+
+
+
+
+
+
+
+.. ....... ... -- --- -.- . ....... -.. --- --- -... .. . ... 
