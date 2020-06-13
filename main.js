@@ -76,7 +76,8 @@ const turnIntoEnglish = (str) => {
   return output.map(e=>e.replace('|', ' ')).join('');
 }
 
-const morseDetection = (string) => /^[\.-\s\|]+$/.test(string);
+const morseDetectionHyphen = (string) => /^[\.-\s\|]+$/.test(string);
+const morseDetectionUnderscore = (string) => /^[\._\s\|]+$/.test(string);
 
 const userInput = document.getElementById('input-in');
 const langDetectOutput = document.getElementById('language-detect');
@@ -86,9 +87,12 @@ const submitButton = document.getElementById('submit-button');
 submitButton.addEventListener('click', ()=>{
   let input = userInput.value;
   outputBox.innerHTML = '';
-  if (morseDetection(input)) {
+  if (morseDetectionHyphen(input)) {
     langDetectOutput.innerHTML = 'You entered morse code. Here\'s your English translation:';
     outputBox.innerHTML = turnIntoEnglish(fromHyphens(input));
+  } else if (morseDetectionUnderscore(input)) {
+    langDetectOutput.innerHTML = 'You entered morse code. Here\'s your English translation:';
+    outputBox.innerHTML = turnIntoEnglish((input));
   } else {
     langDetectOutput.innerHTML = 'You entered english. Here\'s your morse code:';
     outputBox.innerHTML = turnIntoMorse(input);
