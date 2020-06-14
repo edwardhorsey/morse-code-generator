@@ -1,4 +1,5 @@
-export const morseObj = {
+const morseObj = {
+
   A:  '.-'	 	,
   B:	'-...',
   C:	'-.-.',
@@ -54,3 +55,14 @@ export const morseObj = {
   '@':'.--.-.',
 
 }
+
+
+// const toHyphens = (str) => str.split('').map(e=>e.replace('_', '-')).join('');
+let string = "-. . ...- . .-.  |  ... .- -.--  |  -. . ...- . .-."
+
+let stringWithForwardSlashes = string.replace(/\|/g, '/');
+console.log(stringWithForwardSlashes);
+
+let strtwo = '-. . ...- . .-.  /  ... .- -.--  /  -. . ...- . .-.';
+
+console.log(strtwo.replace(/\//g, '|'))
