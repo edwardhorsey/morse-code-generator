@@ -19,20 +19,19 @@ const turnIntoMorse = (str) => {
 
 const turnIntoEnglish = (str) => {
   let output = underScoreToHyphens(str).toUpperCase().split(' ').map(e=>{
-    return e === '|' || e === '/' ? e : Object.keys(morse.morseObj).find(k=>{return morse.morseObj[k] === e});
+    return e === '|' || e === '/' ? e : Object.keys(morse.morseObj).find(k=>morse.morseObj[k] === e);
   }).join('');
   return putBackInSpaces(output);
 }
 
 submitButton.addEventListener('click', ()=>{
-  outputBox.innerHTML = '';
   let input = userInput.value;
   if (morseDetection(input)) {
     langDetectOutput.innerHTML = 'You entered morse code. Here\'s your English translation:';
-    outputBox.innerHTML = turnIntoEnglish(trimWhiteSpace(input));
+    outputBox.value = turnIntoEnglish(trimWhiteSpace(input));
   } else {
     langDetectOutput.innerHTML = 'You entered english. Here\'s your morse code:';
-    outputBox.innerHTML = turnIntoMorse(trimWhiteSpace(input));
+    outputBox.value = turnIntoMorse(trimWhiteSpace(input));
   }
   outputBox.style.display = 'block';
 });
