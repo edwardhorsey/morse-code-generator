@@ -37,6 +37,7 @@ body{
       p{
         padding: 10px 0px;
       }
+
       input.btn{
         width: 50%;
         margin: 10px 0px;
@@ -46,13 +47,27 @@ body{
       textarea{
         padding: 10px;
       }
-
+      
       &.input-section{
         text-align: left;
+        div{
+          display:block;
+          white-space: nowrap;
+          margin: 0;
+          list-style-type: disc;
+          color: darkblue;
+          text-indent: 20px;
+          font-size: 0.9em;
+          height: fit-content;
+        }
       }
 
       &.output-section{
         text-align: right;
+        min-height: 150px;
+        textarea{
+          display:none;
+        }
       }
 
       a{

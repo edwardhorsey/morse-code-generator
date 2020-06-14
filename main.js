@@ -10,6 +10,7 @@ const morseDetectionUnderscore = (string) => /^[\._\s\|]+$/.test(string);
 
 const toHyphens = (str) => str.split('').map(e=>e.replace('_', '-')).join('');
 const fromHyphens = (str) => str.split('').map(e=>e.replace('-', '_')).join('');
+const fromFowardSlash = (str) => str.split('').map(e=>e.replace('/', '|')).join('');
 const trimWhiteSpace = (str) => str.replace(/\s+/g, ' ').trim();
 
 const turnIntoMorse = (str) => {
@@ -26,7 +27,6 @@ const turnIntoEnglish = (str) => {
   return output.map(e=>e.replace('|', ' ')).join('');
 }
 
-
 submitButton.addEventListener('click', ()=>{
   let input = userInput.value;
   outputBox.innerHTML = '';
@@ -40,4 +40,5 @@ submitButton.addEventListener('click', ()=>{
     langDetectOutput.innerHTML = 'You entered english. Here\'s your morse code:';
     outputBox.innerHTML = turnIntoMorse(input);
   }
+  outputBox.style.display = 'block';
 });
