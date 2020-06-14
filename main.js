@@ -7,32 +7,32 @@ const submitButton = document.getElementById('submit-button');
 
 const morseDetection = (string) => /^[\._\s\|\-\/]+$/.test(string);
 const putBackInSpaces = (str) => str.replace(/[\/\|]/g, ' ');
+const underScoreToHyphens = (str) => str.replace(/_/g, '-');
 const trimWhiteSpace = (str) => str.replace(/\s+/g, ' ').trim();
 
 const turnIntoMorse = (str) => {
-  let output = trimWhiteSpace(str).toUpperCase().split('').map(e=>{
+  let output = str.toUpperCase().split('').map(e=>{
     return e === ' ' ? ' | ' : morse.morseObj[e];
   }).join(' ');
   return (output);
 };
 
 const turnIntoEnglish = (str) => {
-  let output = trimWhiteSpace(str).toUpperCase().split(' ').map(e=>{
+  let output = underScoreToHyphens(str).toUpperCase().split(' ').map(e=>{
     return e === '|' || e === '/' ? e : Object.keys(morse.morseObj).find(k=>{return morse.morseObj[k] === e});
-  }).join('')
+  }).join('');
   return putBackInSpaces(output);
 }
 
 submitButton.addEventListener('click', ()=>{
   outputBox.innerHTML = '';
   let input = userInput.value;
-  outputBox.innerHTML = '';
   if (morseDetection(input)) {
     langDetectOutput.innerHTML = 'You entered morse code. Here\'s your English translation:';
-    outputBox.innerHTML = turnIntoEnglish((input));
+    outputBox.innerHTML = turnIntoEnglish(trimWhiteSpace(input));
   } else {
     langDetectOutput.innerHTML = 'You entered english. Here\'s your morse code:';
-    outputBox.innerHTML = turnIntoMorse(input);
+    outputBox.innerHTML = turnIntoMorse(trimWhiteSpace(input));
   }
   outputBox.style.display = 'block';
 });
