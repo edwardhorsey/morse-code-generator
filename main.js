@@ -18,7 +18,7 @@ const turnIntoMorse = (str) => {
 };
 
 const turnIntoEnglish = (str) => {
-  let output = underScoreToHyphens(str).toUpperCase().split(' ').map(e=>{
+  let output = underScoreToHyphens(str).split(' ').map(e=>{
     return e === '|' || e === '/' ? e : Object.keys(morse.morseObj).find(k=>morse.morseObj[k] === e);
   }).join('');
   return putBackInSpaces(output);
