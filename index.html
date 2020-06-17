@@ -9,28 +9,37 @@
 </head>
 <body>
 
-  <article>
+  <main>
+
+    <header>
     <h1>Morse Code Translator</h1>
-    <h4>Eng => Morse Code | Morse Code => Eng</h4>
-    <div class="input-section">
+    <h4>Eng => Morse Code<br>Morse Code => Eng</h4>
+    </header>
+
+    <section class="input-section">
       <p>Enter text in English or Morse code</p>
       <div>
         <p>Format for morse code:</p>
-        <li>( . and _ )   OR   ( . and - )</li>
-        <li>| OR / for spaces between words</li>
+        <ul>
+        <li> . and - OR _</li>
+        <li>| OR / between words</li>
+      </ul>
       </div>
       <p>Enter text here:</p>
       <textarea name="" id="input-in" cols="30" rows="7"></textarea>
       <input type="button" value="Submit" id="submit-button" class="btn">
-    </div>
-    <div class="output-section">
+    </section>
+
+    <section class="output-section">
       <p id="language-detect"></p>
       <textarea class="output" name="" id="morse-output" cols="30" rows="3"></textarea>
-    </div>
-    <div>
+    </section>
+
+    <footer>
       <p>Created by Edward Horsey   <a href="https://www.github.com/edwardhorsey" target="blank"><i class="fa fa-github"></i></a></p>
-    </div>
-  </article>
+    </footer>
+
+  </main>
   
   <script type="module" src="main.js"></script>
 </body>

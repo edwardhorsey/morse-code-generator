@@ -1,25 +1,20 @@
-import * as morse from "./morseObj.js"
+import morseObj from "./morseObj.js"
 
 const userInput = document.getElementById('input-in');
 const langDetectOutput = document.getElementById('language-detect');
 const outputBox = document.getElementById('morse-output');
 const submitButton = document.getElementById('submit-button');
 
-const morseDetection = (string) => /^[\._\s\|\-\/]+$/.test(string);
-const putBackInSpaces = (str) => str.replace(/[\/\|]/g, ' ');
-const underScoreToHyphens = (str) => str.replace(/_/g, '-');
-const trimWhiteSpace = (str) => str.replace(/\s+/g, ' ').trim();
+const morseDetection = string => /^[\._\s\|\-\/]+$/.test(string);
+const putBackInSpaces = str => str.replace(/[\/\|]/g, ' ');
+const underScoreToHyphens = str => str.replace(/_/g, '-');
+const trimWhiteSpace = str => str.replace(/\s+/g, ' ').trim();
 
-const turnIntoMorse = (str) => {
-  let output = str.toUpperCase().split('').map(e=>{
-    return e === ' ' ? ' | ' : morse.morseObj[e];
-  }).join(' ');
-  return (output);
-};
+const turnIntoMorse = str => str.toUpperCase().split('').map(el => el === ' ' ? ' | ' : morseObj[el]).join(' ');
 
-const turnIntoEnglish = (str) => {
-  let output = underScoreToHyphens(str).split(' ').map(e=>{
-    return e === '|' || e === '/' ? e : Object.keys(morse.morseObj).find(k=>morse.morseObj[k] === e);
+const turnIntoEnglish = str => {
+  const output = underScoreToHyphens(str).split(' ').map(el => {
+    return el === '|' || el === '/' ? el : Object.keys(morseObj).find(key => morseObj[key] === el);
   }).join('');
   return putBackInSpaces(output);
 }

@@ -2,6 +2,7 @@
   padding: 0px;
   margin: 0px;
   font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
   height: 100vh;
 }
 
-body article {
+body main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,16 +35,24 @@ body article {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
-  width: 75%;
+  width: 80%;
   background-color: #c9c9c9;
 }
 
-body article h1, body article h4 {
-  padding: 10px;
+body main header {
   margin: 0 auto;
+  padding: 10px;
 }
 
-body article div {
+body main header h1 {
+  font-size: 18px;
+}
+
+body main header h4 {
+  font-size: 16px;
+}
+
+body main section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,47 +69,72 @@ body article div {
   white-space: normal;
 }
 
-body article div p {
-  padding: 10px 0px;
+body main section p {
+  padding: 5px 0px;
 }
 
-body article div input.btn {
+body main section input.btn {
   width: 50%;
   margin: 10px 0px;
   height: 35px;
 }
 
-body article div textarea {
+body main section textarea {
   padding: 10px;
 }
 
-body article div.input-section {
+body main section.input-section {
   text-align: left;
 }
 
-body article div.input-section div {
+body main section.input-section div {
   display: block;
   white-space: nowrap;
   margin: 0;
   list-style-type: disc;
+  font-size: 12px;
   color: maroon;
-  text-indent: 20px;
   font-size: 0.9em;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 
-body article div.output-section {
+body main section.input-section div ul li {
+  margin-left: 20px;
+}
+
+body main section.output-section {
   text-align: right;
   min-height: 150px;
 }
 
-body article div.output-section textarea {
+body main section.output-section textarea {
   display: none;
 }
 
-body article div a:visited {
+body main footer {
+  padding: 10px;
+  margin: 0 auto;
+}
+
+body main footer a:visited {
   color: black;
+}
+
+@media only screen and (min-width: 768px) {
+  * {
+    font-size: 18px;
+  }
+  body main header h1 {
+    font-size: 26px;
+  }
+  body main header h4 {
+    font-size: 18px;
+    margin: 0 auto;
+  }
+  body main section.input-section div {
+    text-indent: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
