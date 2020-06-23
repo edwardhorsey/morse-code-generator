@@ -31,9 +31,9 @@ body main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 0 auto;
   width: 80%;
   background-color: #c9c9c9;
@@ -45,11 +45,26 @@ body main header {
 }
 
 body main header h1 {
-  font-size: 18px;
+  font-size: 20px;
+  text-align: center;
 }
 
-body main header h4 {
+body main header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+body main header div h4 {
   font-size: 16px;
+  padding: 5px;
 }
 
 body main section {
@@ -70,7 +85,8 @@ body main section {
 }
 
 body main section p {
-  padding: 5px 0px;
+  padding: 5px;
+  white-space: normal;
 }
 
 body main section input.btn {
@@ -88,16 +104,23 @@ body main section.input-section {
 }
 
 body main section.input-section div {
-  display: block;
+  display: inline-block;
   white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
   margin: 0;
   list-style-type: disc;
   font-size: 12px;
-  color: maroon;
   font-size: 0.9em;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+body main section.input-section div.format {
+  color: maroon;
 }
 
 body main section.input-section div ul li {
@@ -118,6 +141,10 @@ body main footer {
   margin: 0 auto;
 }
 
+body main footer a {
+  color: black;
+}
+
 body main footer a:visited {
   color: black;
 }
@@ -133,7 +160,7 @@ body main footer a:visited {
     font-size: 18px;
     margin: 0 auto;
   }
-  body main section.input-section div {
+  body main section.input-section div.format {
     text-indent: 20px;
   }
 }

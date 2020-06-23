@@ -17,7 +17,7 @@ body {
   main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0 auto;
     width: 80%;
     background-color: rgb(201, 201, 201);
@@ -26,11 +26,19 @@ body {
       margin: 0 auto;
       padding: 10px;      
       h1 {
-        font-size: 18px;
+        font-size: 20px;
+        text-align: center;
       }
-      
-      h4  {
-        font-size: 16px;
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+        
+        h4  {
+          font-size: 16px;
+          padding: 5px;
+        }
       }
     }
     section {
@@ -43,7 +51,8 @@ body {
       white-space: normal;
 
       p {
-        padding: 5px 0px;
+        padding: 5px;
+        white-space: normal;
       }
 
       input.btn {
@@ -60,14 +69,19 @@ body {
         text-align: left;
 
         div {
-          display:block;
+          display: inline-block;
           white-space: nowrap;
+          width: fit-content;
+          padding: 5px;
           margin: 0;
           list-style-type: disc;
           font-size: 12px;
-          color: maroon;
           font-size: 0.9em;
           height: fit-content;
+
+          &.format {
+          color: maroon;
+          }
           
         ul {
 
@@ -94,7 +108,7 @@ body {
         margin: 0 auto;
 
       a {
-        
+        color:black;
         &:visited {
           color:black;
         }
@@ -131,7 +145,9 @@ body {
         &.input-section {
 
           div {
-            text-indent: 20px;
+            &.format {
+              text-indent: 20px;
+            }
           }
         }
       }
