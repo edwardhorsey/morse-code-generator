@@ -18,9 +18,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    border: 1px solid grey;
+    border-radius: 10px;
     margin: 0 auto;
     width: 80%;
-    background-color: rgb(201, 201, 201);
+    background-color: rgb(206, 206, 206);
 
     header {
       margin: 0 auto;
@@ -59,14 +61,25 @@ body {
         width: 50%;
         margin: 10px 0px;
         height: 35px;
+        background-color: rgb(239, 239, 239);
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 5px;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+        background-color: rgb(223, 222, 222);
+        }
       }
 
       textarea {
         padding: 10px;
+        border-radius: 5px;
       }
       
       &.input-section {
         text-align: left;
+
 
         div {
           display: inline-block;
@@ -98,6 +111,7 @@ body {
 
         textarea {
           display:none;
+          border-radius: 5px;
         }
       }
 
@@ -122,7 +136,7 @@ body {
 @media only screen and (min-width: 768px) {
   
   *{
-    font-size: 18px
+    font-size: 16px
   }
   body{
     
@@ -133,10 +147,11 @@ body {
         h1 {
           font-size: 26px;
         }
-        
-        h4  {
-          font-size: 18px;
-          margin: 0 auto;
+        div {
+          h4  {
+            font-size: 18px;
+            margin: 0 auto;
+          }
         }
       }
 

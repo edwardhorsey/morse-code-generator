@@ -34,9 +34,11 @@ body main {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  border: 1px solid grey;
+  border-radius: 10px;
   margin: 0 auto;
   width: 80%;
-  background-color: #c9c9c9;
+  background-color: #cecece;
 }
 
 body main header {
@@ -93,10 +95,22 @@ body main section input.btn {
   width: 50%;
   margin: 10px 0px;
   height: 35px;
+  background-color: #efefef;
+  border: 1px solid #b4b4b4;
+  border-radius: 5px;
+}
+
+body main section input.btn:focus {
+  outline: none;
+}
+
+body main section input.btn:hover {
+  background-color: #dfdede;
 }
 
 body main section textarea {
   padding: 10px;
+  border-radius: 5px;
 }
 
 body main section.input-section {
@@ -134,6 +148,7 @@ body main section.output-section {
 
 body main section.output-section textarea {
   display: none;
+  border-radius: 5px;
 }
 
 body main footer {
@@ -151,12 +166,12 @@ body main footer a:visited {
 
 @media only screen and (min-width: 768px) {
   * {
-    font-size: 18px;
+    font-size: 16px;
   }
   body main header h1 {
     font-size: 26px;
   }
-  body main header h4 {
+  body main header div h4 {
     font-size: 18px;
     margin: 0 auto;
   }

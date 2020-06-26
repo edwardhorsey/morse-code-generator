@@ -1,4 +1,4 @@
-import morseObj from "./morseObj.js"
+import morseObj from "./modules/morseObj.js"
 
 const userInput = document.getElementById('input-in');
 const langDetectOutput = document.getElementById('language-detect');
